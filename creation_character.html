@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="./css/styles.css" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <title>Aria</title>
+    </head>
+    <body>
+        <header><h1>ARIA - Création de personnage</h1></header>
+        <main>
+            <form>
+                <label for="creation_name">Nom du personnage :</label>
+                <input
+                    class="input-field"
+                    type="text"
+                    id="creation_name"
+                    name="creation"
+                /><br />
+                <label for="creation_ability">Habileté du personnage :</label>
+                <input
+                    class="input-field"
+                    type="number"
+                    id="creation_ability"
+                    name="creation"
+                    placeholder="1 dé 6 + 6"
+                />
+                <br />
+                <label for="creation_endurance"
+                    >Endurance du personnage :</label
+                >
+                <input
+                    class="input-field"
+                    type="number"
+                    id="creation_stamina"
+                    name="creation"
+                    placeholder="2 dé 6 + 6"
+                />
+                <br />
+                <label for="creation_chance">Chance :</label>
+                <input
+                    class="input-field"
+                    type="number"
+                    id="creation_luck"
+                    name="creation"
+                    placeholder="1 dé 6 + 6"
+                />
+                <br />
+                <input
+                    type="button"
+                    value="Statistiques aléatoires"
+                    onclick="randomStat()"
+                /><span id="result"></span>
+            </form>
+        </main>
+        <footer></footer>
+        <script src="./js/creation_character.js"></script>
+    </body>
+</html>
