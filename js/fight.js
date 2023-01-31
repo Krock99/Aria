@@ -1,4 +1,4 @@
-function startCombat() {
+function startfight() {
     // On cache la phrase de game over pour le cas où on relance un Nième combat
     document.getElementById('win').style.display = 'none';
     document.getElementById('lose').style.display = 'none';
@@ -41,24 +41,24 @@ function startCombat() {
         damageTaken = 'Aucun des joueurs ne perd de point de vie.';
     }
 
-    document.getElementById('enemy-attack').innerHTML = enemyAttack;
+    document.getElementById('enemy_attack').innerHTML = enemyAttack;
     document.getElementById('player-attack').innerHTML = playerAttack;
-    document.getElementById('damage-taken').innerHTML = damageTaken;
-    document.getElementById('enemy-endurance').innerHTML = enemyEndurance;
-    document.getElementById('enemy-name-attack').innerHTML = enemyName;
-    document.getElementById('enemy-name-life').innerHTML = enemyName;
-    document.getElementById('player-endurance').innerHTML = playerEndurance;
-    document.getElementById('combat-results').style.display = 'block';
+    document.getElementById('damage_taken').innerHTML = damageTaken;
+    document.getElementById('enemy_stamina').innerHTML = enemyEndurance;
+    document.getElementById('enemy_name_attack').innerHTML = enemyName;
+    document.getElementById('enemy_name_life').innerHTML = enemyName;
+    document.getElementById('player_stamina').innerHTML = playerEndurance;
+    document.getElementById('fight_results').style.display = 'block';
     document.getElementById('nextButton').style.display = 'block';
 
     if (enemyEndurance <= 0) {
         document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('combat-results').style.display = 'block';
+        document.getElementById('fight_results').style.display = 'block';
         document.getElementById('win').style.display = 'block';
     }
     if (playerEndurance <= 0) {
         document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('combat-results').style.display = 'block';
+        document.getElementById('fight_results').style.display = 'block';
         document.getElementById('lose').style.display = 'block';
     }
 }
@@ -94,23 +94,23 @@ function nextTurn() {
         damageTaken = 'Aucun des joueurs ne perd de point de vie.';
     }
 
-    document.getElementById('enemy-attack').innerHTML = enemyAttack;
+    document.getElementById('enemy_attack').innerHTML = enemyAttack;
     document.getElementById('player-attack').innerHTML = playerAttack;
-    document.getElementById('damage-taken').innerHTML = damageTaken;
-    document.getElementById('enemy-endurance').innerHTML = enemyEndurance;
-    document.getElementById('enemy-name-attack').innerHTML = enemyName;
-    document.getElementById('enemy-name-life').innerHTML = enemyName;
-    document.getElementById('player-endurance').innerHTML = playerEndurance;
-    document.getElementById('combat-results').style.display = 'block';
+    document.getElementById('damage_taken').innerHTML = damageTaken;
+    document.getElementById('enemy_stamina').innerHTML = enemyEndurance;
+    document.getElementById('enemy_name_attack').innerHTML = enemyName;
+    document.getElementById('enemy_name_life').innerHTML = enemyName;
+    document.getElementById('player_stamina').innerHTML = playerEndurance;
+    document.getElementById('fight_results').style.display = 'block';
 
     if (enemyEndurance <= 0) {
         document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('combat-results').style.display = 'block';
+        document.getElementById('fight_results').style.display = 'block';
         document.getElementById('win').style.display = 'block';
     }
     if (playerEndurance <= 0) {
         document.getElementById('nextButton').style.display = 'none';
-        document.getElementById('combat-results').style.display = 'block';
+        document.getElementById('fight_results').style.display = 'block';
         document.getElementById('lose').style.display = 'block';
     }
 }

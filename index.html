@@ -2,129 +2,140 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="./css/normalize.css" />
-        <link rel="stylesheet" href="./css/styles.css" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
         />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="../style.css" />
+
         <title>Aria</title>
     </head>
     <body>
-        <header><h1>ARIA - Combats</h1></header>
         <main>
-            <form id="form-input">
-                <div>
-                    <h2>Joueur</h2>
-                    <label for="playerEndurance">Endurance du joueur :</label>
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="playerEndurance"
-                        name="playerEndurance"
-                    /><br />
+            <!-- Button to open the modal -->
+            <button
+                onclick="document.getElementById('id01').style.display='block'"
+            >
+                Inscription
+            </button>
 
-                    <label for="playerSkill">Habileté du joueur :</label>
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="playerSkill"
-                        name="playerSkill"
-                    /><br />
+            <!-- The Modal (contains the Sign Up form) -->
+            <div id="id01" class="modal">
+                <span
+                    onclick="document.getElementById('id01').style.display='none'"
+                    class="close"
+                    title="Close Modal"
+                    >&times;</span
+                >
+                <form class="modal-content">
+                    <div class="container">
+                        <h1>Inscription</h1>
+                        <p>
+                            Veuillez remplir le formulaire pour créer un compte
+                        </p>
+                        <hr />
+                        <label for="email"><b>Email</b></label>
+                        <input
+                            type="text"
+                            placeholder="Entre ton adresse email"
+                            name="email"
+                            required
+                        />
 
-                    <label for="playerAttackBonus"
-                        >Bonus d'attaque du joueur :</label
-                    >
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="playerAttackBonus"
-                        name="playerAttackBonus"
-                    /><br />
-                </div>
-                <div>
-                    <h2>Adversaire</h2>
-                    <label for="enemyEndurance">Endurance de l'ennemi :</label>
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="enemyEndurance"
-                        name="enemyEndurance"
-                    /><br />
+                        <label for="psw"><b>Mot de passe</b></label>
+                        <input
+                            type="password"
+                            placeholder="Entre ton mot de passe"
+                            name="psw"
+                            required
+                        />
 
-                    <label for="enemySkill">Habileté de l'ennemi :</label>
-                    <input
-                        class="input-field"
-                        type="number"
-                        id="enemySkill"
-                        name="enemySkill"
-                    /><br />
+                        <label for="psw-repeat"
+                            ><b>Répéter le mot de passe</b></label
+                        >
+                        <input
+                            type="password"
+                            placeholder="Entre à nouveau ton mot de passe"
+                            name="psw-repeat"
+                            required
+                        />
 
-                    <label for="enemyName">Nom de l'ennemi :</label>
-                    <input
-                        class="input-field"
-                        type="text"
-                        id="enemyName"
-                        name="enemyName"
-                    /><br />
-                </div>
-            </form>
-            <h2 id="titre-combat">Place au combat !!!</h2>
-            <div class="button-area">
-                <input
-                    type="button"
-                    value="   Combat   "
-                    id="start_combat_button"
-                    class="button"
-                    onclick="startCombat()"
-                />
-                <input
-                    type="button"
-                    value="Tour suivant"
-                    id="nextButton"
-                    class="button"
-                    onclick="nextTurn()"
-                    style="display: none"
-                /><!--Remettre none à la place de block-->
+                        <div class="clearfix">
+                            <button
+                                type="button"
+                                onclick="document.getElementById('id01').style.display='none'"
+                                class="cancelbtn"
+                            >
+                                Annuler
+                            </button>
+                            <button type="submit" class="signup">
+                                Inscription
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <!-- Button to open the modal login form -->
+            <button
+                onclick="document.getElementById('id02').style.display='block'"
+            >
+                Connexion
+            </button>
 
-            <div id="combat-results" style="display: none">
-                <!--Remettre none à la place de block-->
-                <div class="result">
-                    <p>
-                        Votre force d'attaque <br />
-                        <span id="player-attack" class="span-stats"></span>
-                    </p>
-                    <p>
-                        Force d'attaque de <span id="enemy-name-attack"></span>
-                        <br />
-                        <span id="enemy-attack" class="span-stats"></span>
-                    </p>
-                </div>
-                <p id="damage-taken"></p>
-                <div class="result">
-                    <p>
-                        Vos points de vie <br />
-                        <span id="player-endurance" class="span-life"></span>
-                    </p>
-                    <p>
-                        Points de vie de <span id="enemy-name-life"></span>
-                        <br />
-                        <span id="enemy-endurance" class="span-life"></span>
-                    </p>
-                </div>
+            <!-- The Modal -->
+            <div id="id02" class="modal">
+                <span
+                    onclick="document.getElementById('id02').style.display='none'"
+                    class="close"
+                    title="Close Modal"
+                    >&times;</span
+                >
+
+                <!-- Modal Content -->
+                <form class="modal-content animate">
+                    <div class="imgcontainer">
+                        <img
+                            src="./assets/aria.jpg"
+                            alt="Avatar"
+                            class="avatar"
+                        />
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Email</b></label>
+                        <input
+                            type="text"
+                            placeholder="Entre ton adresse email"
+                            name="uname"
+                            required
+                        />
+
+                        <label for="psw-login"><b>Mot de passe</b></label>
+                        <input
+                            type="password"
+                            placeholder="Entre ton mot de passe"
+                            name="psw-login"
+                            required
+                        />
+
+                        <button type="submit">Connexion</button>
+                    </div>
+
+                    <div class="container" style="background-color: #f1f1f1">
+                        <button
+                            type="button"
+                            onclick="document.getElementById('id02').style.display='none'"
+                            class="cancelbtn"
+                        >
+                            Annuler
+                        </button>
+                    </div>
+                </form>
             </div>
-            <p id="win" class="game-over" style="display: none">
-                <!--Remettre none à la place de block-->
-                Félicitations! Vous avez vaincu votre adversaire.
-            </p>
-            <p id="lose" class="game-over" style="display: none">
-                <!--Remettre none à la place de block-->
-                Malheureusement vous êtes tombé au combat et c'est la fin de
-                votre aventure.
-            </p>
         </main>
         <footer></footer>
-        <script src="./js/combat.js"></script>
     </body>
+    <script src="./js/index.js"></script>
 </html>

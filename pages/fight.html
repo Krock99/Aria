@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, user-scalable=yes"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./css/normalize.css" />
+        <link rel="stylesheet" href="../style.css" />
+
+        <title>Aria</title>
+    </head>
+    <body>
+        <header><h1>ARIA - Combats</h1></header>
+        <main>
+            <form id="form_input_fight">
+                <div>
+                    <h2>Joueur</h2>
+                    <label for="playerEndurance">Endurance du joueur :</label>
+                    <input
+                        class="input_field"
+                        type="number"
+                        id="playerEndurance"
+                        name="form_fight"
+                    /><br />
+
+                    <label for="playerSkill">Habileté du joueur :</label>
+                    <input
+                        class="input_field"
+                        type="number"
+                        id="playerSkill"
+                        name="form_fight"
+                    /><br />
+
+                    <label for="playerAttackBonus"
+                        >Bonus d'attaque du joueur :</label
+                    >
+                    <input
+                        class="input_field"
+                        type="number"
+                        id="playerAttackBonus"
+                        name="form_fight"
+                    /><br />
+                </div>
+                <div>
+                    <h2>Adversaire</h2>
+                    <label for="enemyEndurance">Endurance de l'ennemi :</label>
+                    <input
+                        class="input_field"
+                        type="number"
+                        id="enemyEndurance"
+                        name="form_fight"
+                    /><br />
+
+                    <label for="enemySkill">Habileté de l'ennemi :</label>
+                    <input
+                        class="input_field"
+                        type="number"
+                        id="enemySkill"
+                        name="form_fight"
+                    /><br />
+
+                    <label for="enemyName">Nom de l'ennemi :</label>
+                    <input
+                        class="input_field"
+                        type="text"
+                        id="enemyName"
+                        name="form_fight"
+                    /><br />
+                </div>
+            </form>
+            <h2 id="title_fight">Place au combat !!!</h2>
+            <div class="button-area">
+                <input
+                    type="button"
+                    value="   Combat   "
+                    id="start_fight_button"
+                    class="button"
+                    onclick="startfight()"
+                />
+                <input
+                    type="button"
+                    value="Tour suivant"
+                    id="nextButton"
+                    class="button"
+                    onclick="nextTurn()"
+                    style="display: none"
+                />
+            </div>
+
+            <div id="fight_results" style="display: none">
+                <div class="result">
+                    <p>
+                        Votre force d'attaque <br />
+                        <span id="player-attack" class="span_stats"></span>
+                    </p>
+                    <p>
+                        Force d'attaque de <span id="enemy_name_attack"></span>
+                        <br />
+                        <span id="enemy_attack" class="span_stats"></span>
+                    </p>
+                </div>
+                <p id="damage_taken"></p>
+                <div class="result">
+                    <p>
+                        Vos points de vie <br />
+                        <span id="player_stamina" class="span_life"></span>
+                    </p>
+                    <p>
+                        Points de vie de <span id="enemy_name_life"></span>
+                        <br />
+                        <span id="enemy_stamina" class="span_life"></span>
+                    </p>
+                </div>
+            </div>
+            <p id="win" class="game_over" style="display: none">
+                Félicitations! Vous avez vaincu votre adversaire.
+            </p>
+            <p id="lose" class="game_over" style="display: none">
+                Malheureusement vous êtes tombé au combat et c'est la fin de
+                votre aventure.
+            </p>
+        </main>
+        <footer></footer>
+        <script src="../js/fight.js"></script>
+    </body>
+</html>
