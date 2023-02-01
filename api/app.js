@@ -7,9 +7,6 @@ const express = require('express');
 // Import de mongoose
 const mongoose = require('mongoose');
 
-// Pour mettre en place le chemin d'accès à un fichier téléchargé par l'utilisateur
-const path = require('path');
-
 // Routes utilisateur
 const userRoutes = require('./routes/user');
 
@@ -41,7 +38,5 @@ app.use((req, res, next) => {
 app.use('/api/auth', userRoutes);
 // Routes pour les personnages
 app.use('/api/character', characterRoutes);
-// Middleware de téléchargement de fichier (images des personnages)
-app.use('/images', express.static(path.join(__dirname, 'images')));
 
 module.exports = app;

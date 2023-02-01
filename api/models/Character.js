@@ -7,10 +7,10 @@ const characterSchema = mongoose.Schema({
     hability: { type: String, required: true },
     stamina: { type: String, required: true },
     chance: { type: String, required: true },
-    mastery: { type: { type: string }, required: true },
-    inventory: { type: { type: string }, required: true },
+    mastery: { type: Object, required: true },
+    inventory: { type: Object, required: true },
     gold: { type: Number, required: true },
-    other: { type: { type: string }, required: false },
+    other: { type: Object, required: false },
 });
 
 module.exports = mongoose.model('Character', characterSchema);
