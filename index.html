@@ -41,8 +41,10 @@
                             placeholder="Entre ton adresse email"
                             name="email"
                             id="email"
+                            class="input_text"
                             required
                         />
+                        <p id="emailErrorMsg"></p>
 
                         <label for="psw"><b>Mot de passe</b></label>
                         <input
@@ -51,8 +53,10 @@
                             name="psw"
                             id="password"
                             autocomplete="on"
+                            class="input_password"
                             required
                         />
+                        <p id="passwordErrorMsg"></p>
 
                         <label for="psw-repeat"
                             ><b>Répéter le mot de passe</b></label
@@ -63,8 +67,10 @@
                             name="psw-repeat"
                             id="password2"
                             autocomplete="on"
+                            class="input_password"
                             required
                         />
+                        <p id="password2ErrorMsg"></p>
 
                         <div class="clearfix">
                             <button
@@ -118,8 +124,10 @@
                             placeholder="Entre ton adresse email"
                             name="uname"
                             id="email_login"
+                            class="input_text"
                             required
                         />
+                        <p id="emailErrorMsg"></p>
 
                         <label for="psw-login"><b>Mot de passe</b></label>
                         <input
@@ -128,11 +136,17 @@
                             name="psw-login"
                             id="password_login"
                             autocomplete="on"
+                            class="input_password"
                             required
                         />
+                        <p id="passwordErrorMsg"></p>
 
-                        <button type="button" onclick="login()">Connexion</button>
+                        <button type="button" onclick="login()">
+                            Connexion
+                        </button>
                     </div>
+
+                    <p id="bad_login"></p>
 
                     <div class="container" style="background-color: #f1f1f1">
                         <button

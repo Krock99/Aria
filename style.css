@@ -217,8 +217,8 @@ form {
 }
 
 /* Full-width inputs */
-input[type=text],
-input[type=password] {
+.input_text,
+.input_password {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -265,6 +265,24 @@ img.avatar {
 /* Add padding to containers */
 .container {
   padding: 16px;
+}
+
+#emailErrorMsg {
+  color: red;
+}
+
+#passwordErrorMsg {
+  color: red;
+}
+
+#password2ErrorMsg {
+  color: red;
+}
+
+#bad_login {
+  font-size: large;
+  text-align: center;
+  color: red;
 }
 
 /* Change styles for span and cancel button on extra small screens */
