@@ -248,3 +248,43 @@ header {
 #lose {
     color: brown;
 }
+
+// creation_character.html
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    &__procedure {
+        @extend .form;
+        text-align: center;
+        color: forestgreen;
+        font-size: large;
+        margin-bottom: 1.5rem;
+        line-height: 2rem;
+    }
+    &__input {
+        min-width: 100px;
+    }
+    &__button {
+        padding: 1rem;
+        margin: 2rem;
+    }
+}
+
+#nameErrorMsg {
+    color: brown;
+}
+
+#abilityErrorMsg {
+    color: brown;
+}
+
+#staminaErrorMsg {
+    color: brown;
+}
+
+#luckErrorMsg {
+    color: brown;
+}

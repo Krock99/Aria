@@ -4,7 +4,7 @@ const Character = require('../models/Character');
 
 // Contoller pour la création d'un nouveau personnage
 exports.createCharacter = (req, res, next) => {
-    const characterObject = JSON.parse(req.body.character);
+    const characterObject = req.body;
     delete characterObject._id;
     delete characterObject._userId;
     const character = new Character({
@@ -12,8 +12,9 @@ exports.createCharacter = (req, res, next) => {
         // Le UserId vient de auth donc du token pour sécuriser la requête
         userId: req.auth.userId,
         mastery: { Mains_nues: '0/0', Poignard: '2/2' },
-        inventory: {},
+        inventory: { Provisions: 4 },
         gold: 0,
+        other: { Objet01: 'Rien pour le moment' },
     });
     // Enregistre le personnage dans la base de données
     character

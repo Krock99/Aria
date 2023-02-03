@@ -21,8 +21,8 @@ const passwordErrorMsg = document.getElementById('passwordErrorMsg');
 const password2ErrorMsg = document.getElementById('password2ErrorMsg');
 const bad_login = document.getElementById('bad_login');
 
-function send(users, request) {
-    fetch('http://localhost:3000/api/auth/' + request, {
+function sendRegister(users) {
+    fetch('http://localhost:3000/api/auth/signup', {
         method: 'POST',
         headers: {
             Accept: 'application/json',
@@ -42,8 +42,40 @@ function send(users, request) {
             if (data.error) {
                 alert(data.error);
             } else {
-                alert('Vous êtes maintenant connecté');
-                window.location.href = './pages/fight.html';
+                alert(
+                    'Enregistrement réussi ! Tu peux maintenant te connecter.',
+                );
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function sendLogin(users) {
+    fetch('http://localhost:3000/api/auth/login', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: users,
+    })
+        .then(res => {
+            if (res.ok) {
+                return res.json();
+            }
+            if (res.status === 401) {
+                bad_login.innerText = 'Paire login/mot de passe incorrecte';
+            }
+        })
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                localStorage.setItem('token', JSON.stringify(data.token));
+                alert('Tu es maintenant connecté');
+                window.location.href = './pages/home.html';
             }
         })
         .catch(error => {
@@ -61,6 +93,7 @@ function validateEmail(email) {
     }
 }
 
+// Password verification
 function validatePassword(password) {
     if (passwordRGEX.test(password)) {
         emailErrorMsg.innerText = '';
@@ -89,20 +122,15 @@ function register() {
         return;
     }
 
-    if (email == '' || password == '' || password2 == '') {
-        alert('Merci de remplir tous les champs');
+    if (password != password2) {
+        password2ErrorMsg.innerText = 'Les mots de passe ne correspondent pas';
     } else {
-        if (password != password2) {
-            password2ErrorMsg.innerText =
-                'Les mots de passe ne correspondent pas';
-        } else {
-            const user = {
-                email: email,
-                password: password,
-            };
-            const users = JSON.stringify(user);
-            send(users, 'signup');
-        }
+        const user = {
+            email: email,
+            password: password,
+        };
+        const users = JSON.stringify(user);
+        sendRegister(users);
     }
 }
 
@@ -118,6 +146,6 @@ function login() {
             password: password,
         };
         const users = JSON.stringify(user);
-        send(users, 'login');
+        sendLogin(users);
     }
 }

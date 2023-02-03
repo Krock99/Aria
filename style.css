@@ -202,6 +202,30 @@ h1 {
   font-weight: bolder;
 }
 
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+.navbar__items {
+  float: left;
+}
+.navbar__items a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar__items a:hover:not(.navbar__active) {
+  background-color: #111;
+}
+.navbar__active {
+  background-color: #04aa6d;
+}
+
 html,
 body {
   margin-left: auto;
@@ -437,6 +461,43 @@ header {
 }
 
 #lose {
+  color: brown;
+}
+
+.form, .form__procedure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.form__procedure {
+  text-align: center;
+  color: forestgreen;
+  font-size: large;
+  margin-bottom: 1.5rem;
+  line-height: 2rem;
+}
+.form__input {
+  min-width: 100px;
+}
+.form__button {
+  padding: 1rem;
+  margin: 2rem;
+}
+
+#nameErrorMsg {
+  color: brown;
+}
+
+#abilityErrorMsg {
+  color: brown;
+}
+
+#staminaErrorMsg {
+  color: brown;
+}
+
+#luckErrorMsg {
   color: brown;
 }
 
