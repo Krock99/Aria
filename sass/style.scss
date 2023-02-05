@@ -313,17 +313,26 @@ fieldset {
     width: 40%;
     max-height: 4.5rem;
     margin: auto;
-    &__name {
-        text-transform: capitalize;
-        text-align: center;
-        font-size: xx-large;
-        font-weight: bold;
-        margin-top: 0.2rem;
-    }
+}
+
+#field_stats_name {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 0.2rem;
 }
 
 .field_stats {
-    padding: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+#field_stats_stamina {
+    margin-top: 0rem;
+    margin-bottom: 0.8rem;
 }
 
 legend {

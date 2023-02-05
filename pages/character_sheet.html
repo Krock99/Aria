@@ -33,17 +33,28 @@
         <main>
             <fieldset class="field_name">
                 <legend>Nom du personnage</legend>
-                <p class="field_name__name">ezhifhize</p>
+                <p id="field_stats_name">ezhifhize</p>
             </fieldset>
             <div class="character_stats">
                 <fieldset class="field_stats">
                     <legend>Habilité</legend>
+                    <p id="field_stats_ability" class="field_stats__feature">
+                        56
+                    </p>
                 </fieldset>
                 <fieldset class="field_stats">
                     <legend>Endurance</legend>
+                    <p id="field_stats_stamina">
+                        56/56
+                    </p>
+                    <div class="field_stats__button">
+                        <input type="button" class="" value="+" onclick="a()" />
+                        <input type="button" class="" value="-" onclick="a()" />
+                    </div>
                 </fieldset>
                 <fieldset class="field_stats">
                     <legend>Chance</legend>
+                    <p id="field_stats_luck" class="field_stats__feature">56</p>
                 </fieldset>
             </div>
             <div class="character">
