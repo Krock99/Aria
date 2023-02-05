@@ -30,228 +30,358 @@
         </nav>
     </header>
     <body>
-        <header><h1>ARIA - Feuille de personnage</h1></header>
         <main>
-            <fieldset>
-                <legend>Statistiques</legend>
-                <p>Nom du personnage :</p>
-                <p>Habilité :</p>
-                <p>Endurance :</p>
-                <p>Chance :</p>
+            <fieldset class="field_name">
+                <legend>Nom du personnage</legend>
+                <p class="field_name__name">ezhifhize</p>
             </fieldset>
-            <fieldset>
-                <legend>Maîtrise des armes</legend>
-                <div>
-                    <input
-                        type="radio"
-                        id="mains_nues"
-                        name="weapons"
-                        value="mains_nues"
-                        checked
-                    />
-                    <label for="mains_nues"
-                        >Mains nues : <span>0/0</span></label
-                    >
+            <div class="character_stats">
+                <fieldset class="field_stats">
+                    <legend>Habilité</legend>
+                </fieldset>
+                <fieldset class="field_stats">
+                    <legend>Endurance</legend>
+                </fieldset>
+                <fieldset class="field_stats">
+                    <legend>Chance</legend>
+                </fieldset>
+            </div>
+            <div class="character">
+                <div class="character__right">
+                    <fieldset class="character__right__field">
+                        <legend>Maîtrise des armes</legend>
+                        <div class="skills">
+                            <div>
+                                <input
+                                    type="radio"
+                                    id="mains_nues"
+                                    class="skills__radio"
+                                    name="weapons"
+                                    value="mains_nues"
+                                    checked
+                                />
+                                <label for="mains_nues"
+                                    >Mains nues : <span>0/0</span></label
+                                >
+                            </div>
+                            <div class="skills__button">
+                                <input
+                                    type="button"
+                                    class=""
+                                    value="+"
+                                    onclick="a()"
+                                />
+                                <input
+                                    type="button"
+                                    class=""
+                                    value="-"
+                                    onclick="a()"
+                                />
+                            </div>
+                        </div>
+                        <div class="skills">
+                            <div>
+                                <input
+                                    type="radio"
+                                    id="Poignard"
+                                    class="skills__radio"
+                                    name="weapons"
+                                    value="Poignard"
+                                />
+                                <label for="Poignard"
+                                    >Poignard : <span>2/2</span></label
+                                >
+                            </div>
+                            <div class="skills__button">
+                                <input
+                                    type="button"
+                                    class=""
+                                    value="+"
+                                    onclick="a()"
+                                />
+                                <input
+                                    type="button"
+                                    class=""
+                                    value="-"
+                                    onclick="a()"
+                                />
+                            </div>
+                        </div>
+                        <div class="skills__add">
+                            <input
+                                type="button"
+                                class=""
+                                value="Ajouter"
+                                onclick="a()"
+                            />
+                        </div>
+                        <div>
+                            <h4>
+                                Bonus de combat :
+                                <span id="skills_bonus"></span>
+                            </h4>
+                        </div>
+                    </fieldset>
                 </div>
-                <div>
-                    <input
-                        type="radio"
-                        id="Poignard"
-                        name="weapons"
-                        value="Poignard"
-                    />
-                    <label for="Poignard">Poignard : <span>2/2</span></label>
+                <div class="character__left">
+                    <fieldset>
+                        <legend>Équipement</legend>
+                        <div class="gear">
+                            <div class="gear__items-header">
+                                <h4>ID -</h4>
+                                <h4>Nom de l'objet</h4>
+                                <h4>Quantité</h4>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>1 -</p>
+                                    <p id="inventory_01"></p>
+                                    <p id="inventory_quantity_01"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>2 -</p>
+                                    <p id="inventory_02"></p>
+                                    <p id="inventory_quantity_02"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>3 -</p>
+                                    <p id="inventory_03"></p>
+                                    <p id="inventory_quantity_03"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>4 -</p>
+                                    <p id="inventory_04"></p>
+                                    <p id="inventory_quantity_04"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>5 -</p>
+                                    <p id="inventory_05"></p>
+                                    <p id="inventory_quantity_05"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>6 -</p>
+                                    <p id="inventory_06"></p>
+                                    <p id="inventory_quantity_06"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>7 -</p>
+                                    <p id="inventory_07"></p>
+                                    <p id="inventory_quantity_07"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>8 -</p>
+                                    <p id="inventory_08"></p>
+                                    <p id="inventory_quantity_08"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>9 -</p>
+                                    <p id="inventory_09"></p>
+                                    <p id="inventory_quantity_09"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <p>10 -</p>
+                                    <p id="inventory_10"></p>
+                                    <p id="inventory_quantity_10"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Or et équipement léger</legend>
+                        <div class="item">
+                            <div class="gear__items">
+                                <div class="gear__items__unit">
+                                    <h4>Piéces d'or -</h4>
+                                    <p id="inventory_01"></p>
+                                    <p id="inventory_quantity_01"></p>
+                                </div>
+                                <div class="gear__items__quantity">
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="+"
+                                        onclick="a()"
+                                    />
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="-"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                            <div class="gear__items">
+                                <div>
+                                    <input
+                                        type="button"
+                                        class=""
+                                        value="Ajouter"
+                                        onclick="a()"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
-                <div><p>Bonus de combat :</p></div>
-            </fieldset>
-            <fieldset>
-                <legend>Equipement</legend>
-                <div class="item">
-                    <div>
-                        <span>1 -</span
-                        ><label for="inventory_1"> Provisions</label
-                        ><input
-                            type="number"
-                            id="inventory_1"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>2 -</span
-                        ><label for="inventory_2"> Poignard</label
-                        ><input
-                            type="number"
-                            id="inventory_2"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>3 -</span><label for="inventory_3"> </label
-                        ><input
-                            type="number"
-                            id="inventory_3"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>4 -</span><label for="inventory_4"> </label
-                        ><input
-                            type="number"
-                            id="inventory_4"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>5 -</span><label for="inventory_5"> </label
-                        ><input
-                            type="number"
-                            id="inventory_5"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>6 -</span><label for="inventory_6"> </label
-                        ><input
-                            type="number"
-                            id="inventory_6"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>7 -</span><label for="inventory_7"> </label
-                        ><input
-                            type="number"
-                            id="inventory_7"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>8 -</span><label for="inventory_8"> </label
-                        ><input
-                            type="number"
-                            id="inventory_8"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>9 -</span><label for="inventory_9"> </label
-                        ><input
-                            type="number"
-                            id="inventory_9"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <span>10 -</span><label for="inventory_10"> </label
-                        ><input
-                            type="number"
-                            id="inventory_10"
-                            class="inventory_input"
-                            name="inventory"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-            </fieldset>
-            <fieldset>
-                <legend>Or et équipement léger</legend>
-                <div class="item">
-                    <div>
-                        <label for="gold">Or :</label>
-                        <input
-                            type="number"
-                            id="gold"
-                            class="inventory_input"
-                            name="gold_and_light"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-                <div class="item">
-                    <div>
-                        <label for="light_1"></label>
-                        <input
-                            type="number"
-                            id="light_1"
-                            class="inventory_input"
-                            name="gold_and_light"
-                        />
-                    </div>
-                    <div>
-                        <input type="button" value="Ajouter" />
-                        <input type="button" value="Supprimer" />
-                    </div>
-                </div>
-            </fieldset>
+            </div>
         </main>
         <footer></footer>
         <script src=""></script>
